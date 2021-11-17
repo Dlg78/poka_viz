@@ -87,3 +87,4 @@ controls = column(city_select, distribution_select)
 
 curdoc().add_root(row(plot, controls))
 curdoc().title = "Weather"
+curdoc().theme = 'dark_minimal'
