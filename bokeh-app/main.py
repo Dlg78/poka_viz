@@ -38,7 +38,7 @@ def get_cmap(df,fld:str):
         return factor_cmap(field_name=fld,palette=palette_colors,factors=cat) #palette=Turbo256[len(cat)]
 
 def get_source(selected_vars:list):
-    df_src = pd.read_csv('./data/main_dataframe.csv',parse_dates=['record_date'])
+    df_src = pd.read_csv('bokeh-app/data/main_dataframe.csv',parse_dates=['record_date'])
     df_src['record_year'] = df_src['record_year'].astype(str)
     return df_src[selected_vars]
 
@@ -68,7 +68,7 @@ def tab1_list_df_vars(var1,var2,var3,var_cat,var_size):
     return lst
 
 def set_selectable_columns():
-    df = pd.read_csv('./data/main_dataframe.csv',parse_dates=['record_date'])
+    df = pd.read_csv('bokeh-app/data/main_dataframe.csv',parse_dates=['record_date'])
     df['record_year'] = df['record_year'].astype(str)
 
     selectable_columns = df.columns.tolist()
@@ -78,7 +78,7 @@ def set_selectable_columns():
     return selectable_columns
 
 def set_selectable_tenants():
-    df = pd.read_csv('./data/main_dataframe.csv',parse_dates=['record_date'])
+    df = pd.read_csv('bokeh-app/data/main_dataframe.csv',parse_dates=['record_date'])
     df['record_year'] = df['record_year'].astype(str)
     
     selectable_tenants = sorted(df.tenant_id.unique())
