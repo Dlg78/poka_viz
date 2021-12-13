@@ -38,7 +38,7 @@ def get_cmap(df,fld:str):
         return factor_cmap(field_name=fld,palette=palette_colors,factors=cat) #palette=Turbo256[len(cat)]
 
 def get_source(selected_vars:list):
-    df_src = pd.read_csv('bokeh-app/data/main_dataframe.csv',parse_dates=['record_date'])
+    df_src = pd.read_csv('bokeh-app/data/main_dataframe_head.csv',parse_dates=['record_date'])
     df_src['record_year'] = df_src['record_year'].astype(str)
     return df_src[selected_vars]
 
