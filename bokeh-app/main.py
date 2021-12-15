@@ -507,4 +507,4 @@ pan2 = Panel(child=layout2,title='Analyse temporelle')
 tabs = Tabs(tabs=[pan0,pan1,pan2])
 curdoc().add_root(tabs)
 curdoc().title = "Poka"
-curdoc().theme = 'dark_minimal'
+curdoc().theme = 'light_minimal'
