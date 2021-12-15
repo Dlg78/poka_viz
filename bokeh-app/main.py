@@ -200,11 +200,11 @@ def build_plot(p, df, var_x, var_y, transparency, var_cat, var_size):
                 mode = 'mouse'
             )
         
-        lasso = LassoSelectTool(renderers = [c])
-        box = BoxSelectTool(renderers = [c])
+        # lasso = LassoSelectTool(renderers = [c])
+        # box = BoxSelectTool(renderers = [c])
         p.add_tools(hover)
-        p.add_tools(lasso)
-        p.add_tools(box)
+        # p.add_tools(lasso)
+        # p.add_tools(box)
         
         p.x_range = Range1d(0, df[var_x].max())
         p.y_range = Range1d(0, df[var_y].max())
@@ -416,9 +416,9 @@ select_size = Select(title='Taille des points par',options=selectable_columns,va
 select_cat = Select(title='Couleur des points par',options=cat_columns,value=None)
 load_graph = Button(label='Charger les graphiques',button_type='success')
 alpha_slide = Slider(start=0.1,end=1,value=0.3,step=0.05,title='Transparence des points')
-plot_1 = figure(tools="pan,wheel_zoom,box_zoom,reset,save") #lasso_select,
-plot_2 = figure(tools="pan,wheel_zoom,box_zoom,reset,save")
-plot_3 = figure(tools="pan,wheel_zoom,box_zoom,reset,save")
+plot_1 = figure(tools="pan,wheel_zoom,box_zoom,reset,save,lasso_select,box_select") #lasso_select,
+plot_2 = figure(tools="pan,wheel_zoom,box_zoom,reset,save,lasso_select,box_select")
+plot_3 = figure(tools="pan,wheel_zoom,box_zoom,reset,save,lasso_select,box_select")
     # Creation & Dynamics
 vars_lst = tab1_list_df_vars(select_val1.value,select_val2.value,select_val3.value,select_cat.value,select_size.value)
 df_selected = get_source(vars_lst)
